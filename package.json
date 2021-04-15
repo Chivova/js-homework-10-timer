@@ -1,0 +1,26 @@
+{
+  "name": "js-homework-10-timer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build ./src/index.html --public-url /parcel-deploy-tutorial/",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chivova/js-homework-10-timer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chivova/js-homework-10-timer/issues"
+  },
+  "homepage": "https://github.com/Chivova/js-homework-10-timer",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
