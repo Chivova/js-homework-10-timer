@@ -46,8 +46,6 @@ const timer = new CountdownTimer({
   targetDate: new Date('2021 december 31 20:00'),
 });
 
-// timer.timerStart();
-
 function dateOutputFace({ days, hours, mins, secs }) {
   refs.days.textContent = `${days}`;
   refs.hours.textContent = `${hours}`;
