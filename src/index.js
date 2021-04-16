@@ -6,7 +6,8 @@ const refs = {
 };
 
 class CountdownTimer {
-  constructor({ targetDate, onTick }) {
+  constructor({ selector, targetDate, onTick }) {
+    this.selector = selector;
     this.targetDate = targetDate;
     this.onTick = onTick;
     this.timerStart();

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build ./src/index.html --public-url /parcel-deploy-tutorial/",
+    "build": "parcel build ./src/index.html --public-url /js-homework-10-timer/",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
@@ -22,5 +22,8 @@
   "homepage": "https://github.com/Chivova/js-homework-10-timer",
   "devDependencies": {
     "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "gh-pages": "^3.1.0"
   }
 }
