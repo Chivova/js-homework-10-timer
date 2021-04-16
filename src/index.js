@@ -7,15 +7,15 @@ const refs = {
 
 class CountdownTimer {
   constructor({ targetDate, onTick }) {
-    this.timerId = null;
     this.targetDate = targetDate;
     this.onTick = onTick;
+    this.timerStart();
   }
 
   timerStart() {
     const finaleDate = this.targetDate;
 
-    this.timerId = setInterval(() => {
+    setInterval(() => {
       const currentDate = new Date();
       const amountTime = finaleDate - currentDate;
       const time = this.getTimerComponents(amountTime);
@@ -23,11 +23,18 @@ class CountdownTimer {
       this.onTick(time);
     }, 1000);
   }
+
+  pad(value) {
+    return String(value).padStart(2, '0');
+  }
+
   getTimerComponents(time) {
-    const days = Math.floor(time / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
-    const secs = Math.floor((time % (1000 * 60)) / 1000);
+    const days = this.pad(Math.floor(time / (1000 * 60 * 60 * 24)));
+    const hours = this.pad(
+      Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    );
+    const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
+    const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
 
     return { days, hours, mins, secs };
   }
@@ -39,7 +46,7 @@ const timer = new CountdownTimer({
   targetDate: new Date('2021 december 31 20:00'),
 });
 
-timer.timerStart();
+// timer.timerStart();
 
 function dateOutputFace({ days, hours, mins, secs }) {
   refs.days.textContent = `${days}`;
